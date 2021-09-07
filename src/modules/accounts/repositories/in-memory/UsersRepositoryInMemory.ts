@@ -1,16 +1,16 @@
-import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
-import { User } from '../../entities/User';
+import { ICreateUserDTO } from '@modules/accounts/dtos/ICreateUserDTO';
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { IUsersRepository } from '../IUsersRepository'
 
 class UsersRepositoryInMemory implements IUsersRepository {
 
   users: User[] = []
 
-  async create({ driver_licence, email, name, password }: ICreateUserDTO): Promise<void> {
+  async create({ driver_license, email, name, password }: ICreateUserDTO): Promise<void> {
     const user = new User()
 
     Object.assign(user, {
-      driver_licence,
+      driver_license,
       email, 
       name, 
       password

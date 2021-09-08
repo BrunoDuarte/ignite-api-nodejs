@@ -29,6 +29,9 @@ class RentalsRepository implements IRentalsRepository {
 
     await this.repository.save(rental)
 
+    console.log(typeof(rental))
+    console.log(rental)
+
     return rental
   }
 

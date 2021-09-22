@@ -4,13 +4,13 @@ import swaggerUi from 'swagger-ui-express'
 import "reflect-metadata"
 
 // import "./database"
-import createConnection from "@shared/infra/typeorm"
+import createConnection from '../typeorm'
 
 import "@shared/container"
 
-import { AppError } from '@errors/AppError'
-import { router } from './shared/infra/http/routes'
-import swaggerFile from './swagger.json'
+import { AppError } from "../../../errors/AppError"
+import { router } from './routes'
+import swaggerFile from '../../../swagger.json'
 
 createConnection()
 const app = express()
@@ -34,4 +34,4 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
   })
 })
 
-app.listen(3333, () => console.log("Server is running!"))
+export { app }

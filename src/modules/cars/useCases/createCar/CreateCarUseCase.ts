@@ -2,7 +2,7 @@ import "reflect-metadata"
 import { inject, injectable } from "tsyringe";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository"
 import { AppError } from "@errors/AppError";
-import { Car } from "@modules/cars/infra/typeorm/entities/Car";
+import { Car } from "../../infra/typeorm/entities/Car"
 
 interface IRequest {
   name: string,

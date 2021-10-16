@@ -1,5 +1,5 @@
-import { CreateUserController } from "@modules/accounts/userCases/createUser/createUserController"
-import { UpdateUserAvatarController } from "@modules/accounts/userCases/updateUserAvatar/UpdateUserAvatarController"
+import { CreateUserController } from "@modules/accounts/useCases/createUser/createUserController"
+import { UpdateUserAvatarController } from "@modules/accounts/useCases/updateUserAvatar/UpdateUserAvatarController"
 import { Router } from "express"
 import multer from "multer"
 import uploadConfig from "../../../../config/upload"
@@ -8,7 +8,7 @@ import { ensureAuthenticated } from "../middlewares/ensureAuthenticated"
 
 const usersRoutes = Router()
 
-const uploadAvatar = multer(uploadConfig.upload("./tmp/avatar"))
+const uploadAvatar = multer(uploadConfig)
 
 const createUserController = new CreateUserController()
 const updateUserAvatarController = new UpdateUserAvatarController()
